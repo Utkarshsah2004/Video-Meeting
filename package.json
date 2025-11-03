@@ -14,7 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "nodemon": "^2.0.2",
+  "nodemon": "^2.0.2",
+  "cross-env": "^7.0.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-css-grid": "^2.0.0-0",
@@ -33,7 +34,7 @@
     "xss": "^1.0.8"
   },
   "scripts": {
-    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon app.js\" \"NODE_ENV=dev PORT=8000 react-scripts start\"",
+  "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon app.js\" \"cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=dev PORT=8000 react-scripts start\"",
     "server": "NODE_ENV=production nodemon app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
